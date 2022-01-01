@@ -1,0 +1,41 @@
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	/* border: 1px solid red; */
+}
+
+.header {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-color: #ccc;
+	height: 60px;
+	border-bottom: 2px solid black;
+}
+
+.nav-links {
+	width: 20%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.2em;
+	height: 100%;
+	gap: 5px;
+}
+
+.nav-links a {
+	height: 100%;
+	text-decoration: none;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.active {
+	background-color: #eee;
+}
