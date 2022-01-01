@@ -39,3 +39,40 @@
 .active {
 	background-color: #eee;
 }
+
+.home {
+	background-color: #ddd;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin-top: 60px;
+}
+
+.welcome {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 50px;
+	margin-bottom: 150px;
+}
+
+.welcome .first {
+	font-size: 3em;
+	font-weight: 800;
+}
+
+.welcome .second {
+	font-size: 1.8em;
+	font-weight: 600;
+}
+
+.welcome a {
+	font-size: 1.3em;
+	text-decoration: none;
+}
