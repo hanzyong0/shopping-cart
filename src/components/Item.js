@@ -1,13 +1,13 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
-import { getItem } from '../data';
 
-function Item() {
-  const params = useParams();
-  const item = getItem(parseInt(params.itemId, 10));
+function Item(props) {
+  const { name, handleChange } = props;
+
+
   return (
-    <div>
-      <p>{item.name}</p>
+    <div className='item'>
+      <div>{name}</div>
+      <input type="number" name={name} onChange={handleChange}></input>
     </div>
   )
 }

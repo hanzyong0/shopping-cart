@@ -40,22 +40,5 @@ const getItem = (id) => {
     item => item.id === id
   );
 }
-// const [inputs, setInputs] = useState({
-//   name: '',
-//   email: '',
-//   phone: '',
-//   school: '',
-//   degree: '',
-//   studyStartDate: '',
-//   studyEndDate: '',
-//   company: '',
-//   position: '',
-//   leaveDate: '',
-// });
-// const handleChange = (e) => {
-//   setInputs({
-//     ...inputs,
-//     [e.target.name]: e.target.value
-//   });
-// };;
+
 export { getItems, getItem }
