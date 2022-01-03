@@ -9,39 +9,56 @@ function Shop() {
 
   const handleChange = (e) => {
     const itemExists = cart.find((item) => item.name === e.target.name);
+    let num = parseInt(e.target.value, 10);
+    let newNum = (isNaN(num) ? 0 : num);
     if (itemExists) {
       setCart(
         cart.map((item) =>
           item.name === e.target.name
-            ? { ...item, quantity: e.target.value }
+            ? { ...item, quantity: newNum }
             : item
         )
       )
     } else {
       setCart([
-        ...cart, { name: e.target.name, quantity: e.target.value }]);
+        ...cart, { name: e.target.name, quantity: newNum }]);
     }
   }
 
-  const sum = cart.reduce((previous, current) => previous + parseInt(current.quantity, 10), 0)
+  const sum = (cart.reduce((previous, current) => previous + parseInt(current.quantity, 10), 0));
 
   return (
     <div className='shop'>
       <div className='cart'>
         <Link
           to="/shop/cart"
+          state={cart}
         >
           Cart ({sum})
         </Link>
       </div>
-      <div className='items'>
+      {/* <div className='items'>
         {items.map(
           (item) => (
             < Item
               key={item.id}
               name={item.name}
+              effect={item.effect}
               handleChange={handleChange}
             />
+          )
+        )}
+      </div> */}
+      <div className='cards'>
+        {items.map(
+          (item) => (
+            < Link
+              to={`/shop/${item.id}`}
+              key={item.id}
+            >
+              <img src={item.img} alt={item.name}></img>
+              <p>{item.name}</p>
+            </Link>
           )
         )}
       </div>
