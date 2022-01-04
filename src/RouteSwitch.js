@@ -39,9 +39,8 @@ function RouteSwitch() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/home" element={<Home />} />
         <Route path="/" element={<App />}>
-          <Route index element={<Home />} />
-          <Route path="home" element={<Home />} />
           <Route path="shop" element={<Shop cart={cart} quantitySum={quantitySum} />} />
           <Route path="shop/:itemId" element={<Card handleChange={handleChange} />} />
           <Route path="shop/cart" element={<Cart cart={cart} quantitySum={quantitySum} priceSum={priceSum} />} />

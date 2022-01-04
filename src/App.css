@@ -44,16 +44,15 @@ a {
 }
 
 .home {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+		url(./assets/pokemart.jpeg);
+	background-position: center;
+	background-size: cover;
 	background-color: #ddd;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	margin-top: 60px;
+	height: 100vh;
 }
 
 .welcome {
@@ -63,6 +62,12 @@ a {
 	align-items: center;
 	gap: 50px;
 	margin-bottom: 150px;
+}
+
+.welcome p,
+.welcome a {
+	color: white;
+	text-shadow: black 0px 0px 10px;
 }
 
 .welcome .first {
@@ -77,6 +82,7 @@ a {
 
 .welcome a {
 	font-size: 1.3em;
+	text-decoration-line: underline;
 }
 
 .shop {
