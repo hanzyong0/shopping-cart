@@ -2,18 +2,19 @@ import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getItem } from '../data';
 
-function Card({ cart, setCart, handleChange }) {
+function Card({ handleChange }) {
   const params = useParams();
   const card = getItem(parseInt(params.itemId, 10));
 
+  // Auto navigate to Shop page after add to cart
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     navigate('/shop')
   };
 
+  // Price state to reflect quantity price change
   const [price, setPrice] = useState(card.price);
-
   const priceChange = (e) => {
     setPrice(card.price * e.target.value)
   };

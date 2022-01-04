@@ -4,13 +4,16 @@ import App from './App';
 import Card from './components/Card';
 import Cart from './components/Cart';
 import Home from './components/Home';
-import Item from './components/Item';
 import Shop from './components/Shop';
+import { getItemByName } from './data';
 
 function RouteSwitch() {
+  // Cart State
   const [cart, setCart] = useState([]);
 
+  // Add to cart everytime card quantity input is changed
   const handleChange = (e) => {
+    const itemByName = getItemByName(e.target.name);
     const itemExists = cart.find((item) => item.name === e.target.name);
     let num = parseInt(e.target.value, 10);
     let newNum = (isNaN(num) ? 0 : num);
@@ -18,25 +21,30 @@ function RouteSwitch() {
       setCart(
         cart.map((item) =>
           item.name === e.target.name
-            ? { ...item, quantity: newNum }
+            ? { ...item, quantity: newNum, ...itemByName }
             : item
         )
       )
     } else {
       setCart([
-        ...cart, { name: e.target.name, quantity: newNum }]);
+        ...cart, { name: e.target.name, quantity: newNum, ...itemByName }]);
     }
-    console.log(cart);
   }
+
+  // Sums of cart items
+  const quantitySum = (cart.reduce((previous, current) => previous + parseInt(current.quantity, 10), 0));
+  const priceSum = (cart.reduce((previous, current) => previous + (parseInt(current.quantity, 10)
+    * parseInt(current.price, 10)), 0));
+
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
           <Route path="home" element={<Home />} />
-          <Route path="shop" element={<Shop cart={cart} setCart={setCart} handleChange={handleChange} />} />
-          <Route path="shop/:itemId" element={<Card cart={cart} setCart={setCart} handleChange={handleChange} />} />
-          <Route path="shop/cart" element={<Cart />} />
+          <Route path="shop" element={<Shop cart={cart} quantitySum={quantitySum} />} />
+          <Route path="shop/:itemId" element={<Card handleChange={handleChange} />} />
+          <Route path="shop/cart" element={<Cart cart={cart} quantitySum={quantitySum} priceSum={priceSum} />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -3,7 +3,6 @@ import React from 'react';
 function Item(props) {
   const { name, effect, handleChange } = props;
 
-
   return (
     <div className='item'>
       <div className='item-name'>{name}:

@@ -1,55 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { getItems } from '../data';
-import Item from './Item';
 
-function Shop({ cart, setCart, handleChange }) {
+function Shop({ cart, quantitySum }) {
   const items = getItems();
-  // const [cart, setCart] = useState([]);
-
-  // const handleChange = (e) => {
-  //   const itemExists = cart.find((item) => item.name === e.target.name);
-  //   let num = parseInt(e.target.value, 10);
-  //   let newNum = (isNaN(num) ? 0 : num);
-  //   if (itemExists) {
-  //     setCart(
-  //       cart.map((item) =>
-  //         item.name === e.target.name
-  //           ? { ...item, quantity: newNum }
-  //           : item
-  //       )
-  //     )
-  //   } else {
-  //     setCart([
-  //       ...cart, { name: e.target.name, quantity: newNum }]);
-  //   }
-  //   console.log(cart);
-  // }
-
-  const sum = (cart.reduce((previous, current) => previous + parseInt(current.quantity, 10), 0));
 
   return (
     <div className='shop'>
-      <div className='cart'>
+      <div>
         <Link
           to="/shop/cart"
           state={cart}
+          className='cart-link'
         >
-          Cart ({sum})
+          Cart ({quantitySum})
         </Link>
       </div>
-      {/* <div className='items'>
-        {items.map(
-          (item) => (
-            < Item
-              key={item.id}
-              name={item.name}
-              effect={item.effect}
-              handleChange={handleChange}
-            />
-          )
-        )}
-      </div> */}
       <div className='cards'>
         {items.map(
           (item) => (

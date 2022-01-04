@@ -53,4 +53,10 @@ const getItem = (id) => {
   );
 }
 
-export { getItems, getItem }
+const getItemByName = (name) => {
+  return items.find(
+    item => item.name === name
+  );
+}
+
+export { getItems, getItem, getItemByName }
