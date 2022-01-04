@@ -10,7 +10,7 @@ function App() {
         <nav className='nav-links'>
           <NavLink
             activeclassname="active"
-            to="/home"
+            to="/shopping-cart"
           >
             Home
           </NavLink>
