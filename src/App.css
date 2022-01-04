@@ -55,7 +55,8 @@ a {
 	height: 100vh;
 }
 
-.welcome {
+.welcome,
+.no-match {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;

@@ -4,6 +4,7 @@ import App from './App';
 import Card from './components/Card';
 import Cart from './components/Cart';
 import Home from './components/Home';
+import NoMatch from './components/NoMatch';
 import Shop from './components/Shop';
 import { getItemByName } from './data';
 
@@ -44,6 +45,7 @@ function RouteSwitch() {
           <Route path="shop" element={<Shop cart={cart} quantitySum={quantitySum} />} />
           <Route path="shop/:itemId" element={<Card handleChange={handleChange} />} />
           <Route path="shop/cart" element={<Cart cart={cart} quantitySum={quantitySum} priceSum={priceSum} />} />
+          <Route path="*" element={<NoMatch />} />
         </Route>
       </Routes>
     </BrowserRouter>
