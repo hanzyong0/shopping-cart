@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/%7Bshopping-cart%7D/static/css/main.1122cf20.css",
-    "main.js": "/%7Bshopping-cart%7D/static/js/main.afc76558.js",
-    "static/media/pokemart.jpeg": "/%7Bshopping-cart%7D/static/media/pokemart.9c1e5e8225cbf9ea1a43.jpeg",
-    "index.html": "/%7Bshopping-cart%7D/index.html",
-    "main.1122cf20.css.map": "/%7Bshopping-cart%7D/static/css/main.1122cf20.css.map",
-    "main.afc76558.js.map": "/%7Bshopping-cart%7D/static/js/main.afc76558.js.map"
+    "main.css": "/shopping-cart/static/css/main.fb6ebd30.css",
+    "main.js": "/shopping-cart/static/js/main.afc76558.js",
+    "static/media/pokemart.jpeg": "/shopping-cart/static/media/pokemart.9c1e5e8225cbf9ea1a43.jpeg",
+    "index.html": "/shopping-cart/index.html",
+    "main.fb6ebd30.css.map": "/shopping-cart/static/css/main.fb6ebd30.css.map",
+    "main.afc76558.js.map": "/shopping-cart/static/js/main.afc76558.js.map"
   },
   "entrypoints": [
-    "static/css/main.1122cf20.css",
+    "static/css/main.fb6ebd30.css",
     "static/js/main.afc76558.js"
   ]
 }
