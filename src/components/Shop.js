@@ -3,27 +3,28 @@ import { Link } from 'react-router-dom';
 import { getItems } from '../data';
 import Item from './Item';
 
-function Shop() {
+function Shop({ cart, setCart, handleChange }) {
   const items = getItems();
-  const [cart, setCart] = useState([]);
+  // const [cart, setCart] = useState([]);
 
-  const handleChange = (e) => {
-    const itemExists = cart.find((item) => item.name === e.target.name);
-    let num = parseInt(e.target.value, 10);
-    let newNum = (isNaN(num) ? 0 : num);
-    if (itemExists) {
-      setCart(
-        cart.map((item) =>
-          item.name === e.target.name
-            ? { ...item, quantity: newNum }
-            : item
-        )
-      )
-    } else {
-      setCart([
-        ...cart, { name: e.target.name, quantity: newNum }]);
-    }
-  }
+  // const handleChange = (e) => {
+  //   const itemExists = cart.find((item) => item.name === e.target.name);
+  //   let num = parseInt(e.target.value, 10);
+  //   let newNum = (isNaN(num) ? 0 : num);
+  //   if (itemExists) {
+  //     setCart(
+  //       cart.map((item) =>
+  //         item.name === e.target.name
+  //           ? { ...item, quantity: newNum }
+  //           : item
+  //       )
+  //     )
+  //   } else {
+  //     setCart([
+  //       ...cart, { name: e.target.name, quantity: newNum }]);
+  //   }
+  //   console.log(cart);
+  // }
 
   const sum = (cart.reduce((previous, current) => previous + parseInt(current.quantity, 10), 0));
 
@@ -53,8 +54,8 @@ function Shop() {
         {items.map(
           (item) => (
             < Link
-              to={`/shop/${item.id}`}
               key={item.id}
+              to={`/shop/${item.id}`}
             >
               <img src={item.img} alt={item.name}></img>
               <p>{item.name}</p>
@@ -62,7 +63,7 @@ function Shop() {
           )
         )}
       </div>
-    </div>
+    </div >
   )
 }
 
