@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/shopping-cart/static/css/main.fb6ebd30.css",
-    "main.js": "/shopping-cart/static/js/main.afc76558.js",
+    "main.js": "/shopping-cart/static/js/main.8031e560.js",
     "static/media/pokemart.jpeg": "/shopping-cart/static/media/pokemart.9c1e5e8225cbf9ea1a43.jpeg",
     "index.html": "/shopping-cart/index.html",
     "main.fb6ebd30.css.map": "/shopping-cart/static/css/main.fb6ebd30.css.map",
-    "main.afc76558.js.map": "/shopping-cart/static/js/main.afc76558.js.map"
+    "main.8031e560.js.map": "/shopping-cart/static/js/main.8031e560.js.map"
   },
   "entrypoints": [
     "static/css/main.fb6ebd30.css",
-    "static/js/main.afc76558.js"
+    "static/js/main.8031e560.js"
   ]
 }
