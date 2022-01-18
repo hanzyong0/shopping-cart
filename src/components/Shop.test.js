@@ -11,6 +11,7 @@ test('Shop', () => {
     </BrowserRouter>
   )
 
-  expect(screen.getByText(/Cart/)).toBeInTheDocument();
-  expect(screen.getByText(/Poke Ball/)).toBeInTheDocument();
+  expect(screen.getByText(/cart/i)).toBeInTheDocument();
+  expect(screen.getByText(/poke ball/i)).toBeInTheDocument();
+  expect(screen.getByText(/cart()/i)).toBeInTheDocument();
 });

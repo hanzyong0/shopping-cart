@@ -11,7 +11,7 @@ test('home', () => {
     </BrowserRouter>
   );
 
-  expect(screen.getByText(/Welcome to Poke Mart/)).toBeInTheDocument();
-  expect(screen.getByText(/Click here to Shop/)).toBeInTheDocument();
+  expect(screen.getByText(/welcome to poke mart/i)).toBeInTheDocument();
+  expect(screen.getByText(/click here to shop/i)).toBeInTheDocument();
 
 })
